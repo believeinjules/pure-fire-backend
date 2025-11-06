@@ -15,6 +15,9 @@ initializeDatabase();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Trust Railway proxy
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet({
   contentSecurityPolicy: {
