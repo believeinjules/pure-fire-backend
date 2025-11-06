@@ -37,6 +37,9 @@ app.use('/api/', limiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+// Serve static files (admin panel)
+app.use(express.static('public'));
+
 // API routes
 app.use('/api', routes);
 
